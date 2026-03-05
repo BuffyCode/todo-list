@@ -44,6 +44,14 @@
   margin-bottom: 25px;
 }
 
+#char-counter{
+  font-size: 11px;
+  color: #aaa;
+  text-align: right;
+  margin-top: -20px;
+  margin-bottom: 10px;
+}
+
 #task-counter{
   text-align: align;
   font-size: 13px;
@@ -183,3 +191,4 @@ ul li span:hover{
 .container.dark-mode #empty-msg {
   color: #666;
 }
+

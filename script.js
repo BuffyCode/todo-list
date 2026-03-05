@@ -7,6 +7,11 @@ inputBox.addEventListener("keypress",(e) =>{
     if(e.key=="Enter") addTask();
 });
 
+inputBox.addEventListener("input",() =>{
+    const remaining = 80 - inputBox.value.length;
+    document.getElementById("char-counter").textContent = `${remaining} characters remaining`;
+});
+
 function addTask(){
     if(inputBox.value === ''){
         alert("You must write something...");
@@ -35,12 +40,14 @@ const savedTheme = localStorage.getItem("theme");
 
 if(savedTheme==="dark"){
     container.classList.add("dark-mode");
+    themeChange.textContent = "☀️ Light Mode";
 }
 
 themeChange.addEventListener("click",() =>{
     container.classList.toggle("dark-mode");
     
     const isDark  = container.classList.contains("dark-mode");
+    themeChange.textContent = isDark ? "☀️ Light Mode" : "🌙 Dark Mode";
     
     localStorage.setItem("theme",isDark ? "dark" : "light");
 })
