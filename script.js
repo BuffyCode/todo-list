@@ -28,6 +28,7 @@ function addTask(){
     inputBox.value = "";
     saveData();
     updateCounter();
+    updateEmptyMessage();
 }
 
 const savedTheme = localStorage.getItem("theme");
@@ -49,11 +50,13 @@ listContainer.addEventListener("click",function(e){
         e.target.classList.toggle("checked");
         saveData();
         updateCounter();
+        updateEmptyMessage();
     }
     else if(e.target.tagName === "SPAN"){
         e.target.parentElement.remove();
         saveData();
         updateCounter();
+        updateEmptyMessage();
     }
 },false);
 
@@ -89,6 +92,15 @@ function updateCounter(){
     counter.textContent = total === 0 ? "" : `${remaining} out of ${total} remaining`;
 }
 
+function updateEmptyMessage(){
+    const emptyMsg = document.getElementById("empty-msg");
+    if(listContainer.querySelectorAll("li").length === 0){
+        emptyMsg.style.display = "block";
+    }else{
+        emptyMsg.style.display = "none";
+    }
+}
+
 function clearAll(){
     if(listContainer.querySelectorAll("li").length === 0){
         alert("No tasks to clear..");
@@ -99,8 +111,10 @@ function clearAll(){
         listContainer.innerHTML ="";
         saveData();
         updateCounter();
+        updateEmptyMessage();
     }
 }
 
 showTask();
 updateCounter();
+updateEmptyMessage();
