@@ -13,7 +13,7 @@
 }
 
 
-.todo-app{
+.todo-app {
   width: 100%;
   max-width: 540px;
   background: #fff;
@@ -48,15 +48,14 @@
   font-size: 11px;
   color: #aaa;
   text-align: right;
-  margin-top: -20px;
   margin-bottom: 10px;
 }
 
 #task-counter{
-  text-align: align;
+  text-align: right;
   font-size: 13px;
   color: #888;
-  margin-top: -15px;
+  margin-top: 10px;
   margin-bottom: 10px;
 }
 
@@ -66,6 +65,14 @@
   padding: 8px 18px;
   font-size: 13px;
   background-color: crimson;
+  border-radius: 20px;
+}
+
+#setTheme{
+  margin-left: auto;
+  padding: 8px 16px;
+  font-size: 12px;
+  background-color: orangered;
   border-radius: 20px;
 }
 
